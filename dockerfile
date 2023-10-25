@@ -5,5 +5,3 @@ WORKDIR /src
 COPY . /src.java
 
 EXPOSE 9090
-
-CMD ["java", "-jar", "ApiEqualityFoodApplication.java"]
