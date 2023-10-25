@@ -6,6 +6,7 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17
 
-COPY . api.jar
+COPY . api.java
+
 EXPOSE 9090
-ENTRYPOINT ["java","-jar", "api.jar"]
+ENTRYPOINT ["java", "api.java"]
