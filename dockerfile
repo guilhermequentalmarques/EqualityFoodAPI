@@ -2,7 +2,7 @@ FROM openjdk:17
 
 WORKDIR /src
 
-COPY . /src.jar
+COPY . /src.java
 
 EXPOSE 9090
 
