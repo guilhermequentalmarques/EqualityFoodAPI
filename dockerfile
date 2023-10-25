@@ -1,11 +1,9 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17
 
-WORKDIR /app
+WORKDIR /src
 
+COPY . .
 
-COPY target/sua-aplicacao.jar app.jar
-
-
-EXPOSE 8080
+EXPOSE 9090
 
 CMD ["java", "-jar", "app.jar"]
