@@ -6,4 +6,4 @@ COPY . /src.java
 
 EXPOSE 9090
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "ApiEqualityFoodApplication.java"]
