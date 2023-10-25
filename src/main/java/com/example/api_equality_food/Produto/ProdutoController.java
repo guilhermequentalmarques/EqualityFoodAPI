@@ -69,6 +69,25 @@ public class ProdutoController {
         }
     }
 
+    @PutMapping("/atualizarQuantidade/{id}")
+    public ResponseEntity<?> setQuantidade(@PathVariable int id, @RequestParam int novaQuant) {
+        try {
+            Optional<Produto> optionalProduto = produtoRepository.findById((long) id);
+
+            if (optionalProduto.isPresent()) {
+                Produto produto = optionalProduto.get();
+                produto.setQuant(novaQuant);
+                produtoRepository.save(produto);
+                return ResponseEntity.ok("Quantidade do produto com ID " + id + " atualizada com sucesso para " + novaQuant);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (DataAccessException ex) {
+            String errorMessage = "Erro: " + ex.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+        }
+    }
+
 
 }
 

@@ -11,29 +11,34 @@ public class Produto {
     private int id;
     private int fk_Administrador_id;
     private String nome;
-    private String tipo;
     private double preco;
     @Column(name = "data_validade")
     private LocalDate data_validade;
-
+    private int quant;
     private String descricao;
     private String categoria;
     private String imagem;
+    private boolean ativado;
 
-    public Produto(int id, int fk_Administrador_id, String nome, String tipo, double preco, LocalDate data_validade, String descricao, String categoria, String imagem) {
+    public Produto(int id, int fk_Administrador_id, String nome, double preco, LocalDate data_validade, int quant, String descricao, String categoria, String imagem, boolean ativado) {
         this.id = id;
         this.fk_Administrador_id = fk_Administrador_id;
         this.nome = nome;
-        this.tipo = tipo;
         this.preco = preco;
         this.data_validade = data_validade;
+        this.quant = quant;
         this.descricao = descricao;
         this.categoria = categoria;
         this.imagem = imagem;
+        this.ativado = ativado;
     }
 
     public Produto() {
 
+    }
+
+    public int getQuant() {
+        return quant;
     }
 
     public int getId() {
@@ -58,14 +63,6 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public double getPreco() {
@@ -108,5 +105,14 @@ public class Produto {
         this.imagem = imagem;
     }
 
+    public boolean isAtivado() {
+        return ativado;
+    }
 
+    public void setAtivado(boolean ativado) {
+        this.ativado = ativado;
+    }
+
+    public void setQuant(int novaQuant) {
+    }
 }
