@@ -12,15 +12,14 @@ public class Produto {
     private long fk_administrador_cpf;
     private String nome;
     private double preco;
-    @Column(name = "data_validade")
-    private LocalDate data_validade;
+    private String data_validade;
     private int quant;
     private String descricao;
     private String categoria;
     private String imagem;
     private boolean ativado;
 
-    public Produto(int id, long fk_administrador_cpf, String nome, double preco, LocalDate data_validade, int quant, String descricao, String categoria, String imagem, boolean ativado) {
+    public Produto(int id, long fk_administrador_cpf, String nome, double preco, String data_validade, int quant, String descricao, String categoria, String imagem, boolean ativado) {
         this.id = id;
         this.fk_administrador_cpf = fk_administrador_cpf;
         this.nome = nome;
@@ -73,11 +72,11 @@ public class Produto {
         this.preco = preco;
     }
 
-    public LocalDate getData_validade() {
+    public String getData_validade() {
         return data_validade;
     }
 
-    public void setData_validade(LocalDate data_validade) {
+    public void setData_validade(String data_validade) {
         this.data_validade = data_validade;
     }
 
