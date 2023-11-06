@@ -9,7 +9,7 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int fk_administrador_cpf;
+    private long fk_administrador_cpf;
     private String nome;
     private double preco;
     @Column(name = "data_validade")
@@ -20,7 +20,7 @@ public class Produto {
     private String imagem;
     private boolean ativado;
 
-    public Produto(int id, int fk_administrador_cpf, String nome, double preco, LocalDate data_validade, int quant, String descricao, String categoria, String imagem, boolean ativado) {
+    public Produto(int id, long fk_administrador_cpf, String nome, double preco, LocalDate data_validade, int quant, String descricao, String categoria, String imagem, boolean ativado) {
         this.id = id;
         this.fk_administrador_cpf = fk_administrador_cpf;
         this.nome = nome;
@@ -49,11 +49,11 @@ public class Produto {
         this.id = id;
     }
 
-    public int getFk_administrador_cpf() {
+    public long getFk_administrador_cpf() {
         return fk_administrador_cpf;
     }
 
-    public void setFk_Administrador_cpf(int fk_Administrador_cpf) {
+    public void setFk_Administrador_cpf(long fk_Administrador_cpf) {
         this.fk_administrador_cpf = fk_Administrador_cpf;
     }
 
